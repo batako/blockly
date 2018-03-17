@@ -121,7 +121,7 @@ Blockly.Ruby.init = function() {
     }
 
     var defvars = [];
-    var variables = Blockly.Variables.allVariables();
+    var variables = Blockly.Variables.allVariables(Code.workspace).map(function(v){ return v.name; });
     for (var x = 0; x < variables.length; x++) {
       defvars[x] = '$' +
          Blockly.Ruby.variableDB_.getName(variables[x], Blockly.Variables.NAME_TYPE) +
